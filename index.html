@@ -2,24 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User Registration Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Advanced Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="registration-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Create Account</h1>
+            <p class="subtitle">Join us today and get started!</p>
+            
+            <form id="registration-form" novalidate>
+                <div class="input-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                    <span class="error-message"></span>
+                </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" required>
+                <div class="input-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                    <span class="error-message"></span>
+                </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required minlength="3">
+                    <span class="error-message"></span>
+                </div>
 
-        <button type="submit">Register</button>
-        <div id="form-feedback"></div>
-    </form>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                    <span class="error-message"></span>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="birthdate">Date of Birth</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="input-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
+                    </label>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="input-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <span class="checkmark"></span>
+                        Subscribe to our newsletter for updates
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="btn-loader">
+                        <div class="spinner"></div>
+                    </span>
+                </button>
+
+                <div id="form-feedback" class="form-feedback"></div>
+            </form>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="#" class="login-btn">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
