@@ -15,24 +15,27 @@ class TodoApp {
     }
 
     setupElements() {
+        // Select DOM Elements as requested
+        this.addButton = document.getElementById('add-task-btn');
         this.taskInput = document.getElementById('task-input');
-        this.addTaskBtn = document.getElementById('add-task-btn');
         this.taskList = document.getElementById('task-list');
+        
+        // Additional elements for full functionality
         this.taskCount = document.getElementById('task-count');
         this.clearCompletedBtn = document.getElementById('clear-completed');
         this.filterBtns = document.querySelectorAll('.filter-btn');
     }
 
     bindEvents() {
-        // Add task events
-        this.addTaskBtn.addEventListener('click', () => this.addTask());
+        // Add task events using the specified variable names
+        this.addButton.addEventListener('click', () => this.addTask());
         this.taskInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.addTask();
         });
 
         // Input validation
         this.taskInput.addEventListener('input', () => {
-            this.addTaskBtn.disabled = this.taskInput.value.trim().length === 0;
+            this.addButton.disabled = this.taskInput.value.trim().length === 0;
         });
 
         // Filter events
@@ -48,7 +51,7 @@ class TodoApp {
         });
 
         // Initial button state
-        this.addTaskBtn.disabled = true;
+        this.addButton.disabled = true;
     }
 
     addTask() {
@@ -74,7 +77,7 @@ class TodoApp {
         this.tasks.unshift(newTask); // Add to beginning of array
         this.saveTasks();
         this.taskInput.value = '';
-        this.addTaskBtn.disabled = true;
+        this.addButton.disabled = true;
         this.render();
         this.updateTaskCounter();
         this.showNotification('Task added successfully!', 'success');
