@@ -1,163 +1,106 @@
-/* Dynamic To-Do List Styles */
+/* Simple To-Do List Styles */
 
+/* Reset default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     padding: 20px;
 }
 
+/* Container styling */
 .container {
-    width: 100%;
     max-width: 500px;
-}
-
-.todo-wrapper {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    background-color: white;
     padding: 30px;
-    animation: fadeIn 0.5s ease-in;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+/* Heading styling */
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
-    font-size: 2.5em;
-    font-weight: 300;
 }
 
+/* Input section styling */
 .input-section {
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
 }
 
+/* Input field styling */
 #task-input {
     flex: 1;
-    padding: 15px;
-    border: 2px solid #e1e1e1;
-    border-radius: 8px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
     font-size: 16px;
-    transition: border-color 0.3s ease;
 }
 
 #task-input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #007bff;
 }
 
+/* Add button styling */
 #add-button {
-    padding: 15px 25px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    font-size: 16px;
 }
 
 #add-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    background-color: #0056b3;
 }
 
-#add-button:active {
-    transform: translateY(0);
-}
-
-.task-list {
+/* Task list styling */
+#task-list {
     list-style: none;
-    max-height: 400px;
-    overflow-y: auto;
 }
 
-.task-list li {
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 8px;
+/* Individual task styling */
+#task-list li {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     padding: 15px;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: slideIn 0.3s ease-out;
-    transition: all 0.3s ease;
 }
 
-.task-list li:hover {
-    background: #e9ecef;
-    transform: translateX(5px);
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
+/* Remove button styling */
 .remove-btn {
-    background: #dc3545;
+    background-color: #dc3545;
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
+    border-radius: 3px;
+    padding: 5px 10px;
     cursor: pointer;
     font-size: 14px;
-    transition: all 0.3s ease;
-    font-weight: 500;
 }
 
 .remove-btn:hover {
-    background: #c82333;
-    transform: scale(1.05);
+    background-color: #c82333;
 }
 
-.remove-btn:active {
-    transform: scale(0.95);
-}
-
-/* Empty state message */
-.task-list:empty::after {
-    content: "No tasks yet. Add your first task above!";
-    display: block;
-    text-align: center;
-    color: #6c757d;
-    font-style: italic;
-    padding: 40px 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border: 2px dashed #dee2e6;
-}
-
-/* Responsive design */
+/* Responsive design for mobile */
 @media (max-width: 600px) {
-    .todo-wrapper {
-        padding: 20px;
-        margin: 10px;
-    }
-    
-    h1 {
-        font-size: 2em;
-    }
-    
     .input-section {
         flex-direction: column;
     }
