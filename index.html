@@ -3,101 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Registration Form</title>
+    <title>Dynamic To-Do List</title>
+    <!-- Link to external CSS stylesheet for styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Main container for the to-do list application -->
     <div class="container">
-        <div class="form-wrapper">
-            <h1>Create Account</h1>
-            <p class="subtitle">Join us today and get started!</p>
+        <div class="todo-wrapper">
+            <!-- Application header -->
+            <h1>My To-Do List</h1>
             
-            <form id="registration-form" novalidate>
-                <div class="input-group">
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" name="firstname" required>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required minlength="3">
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required minlength="8">
-                    <span class="error-message"></span>
-                    <div class="password-strength">
-                        <div class="strength-bar"></div>
-                        <span class="strength-text">Password strength</span>
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group">
-                    <label for="birthdate">Date of Birth</label>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <span class="checkmark"></span>
-                        I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
-                    </label>
-                    <span class="error-message"></span>
-                </div>
-
-                <div class="input-group checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <span class="checkmark"></span>
-                        Subscribe to our newsletter for updates
-                    </label>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    <span class="btn-text">Create Account</span>
-                    <span class="btn-loader">
-                        <div class="spinner"></div>
-                    </span>
-                </button>
-
-                <div id="form-feedback" class="form-feedback"></div>
-            </form>
-
-            <div class="login-link">
-                <p>Already have an account? <a href="#" class="login-btn">Sign In</a></p>
+            <!-- Input section for adding new tasks -->
+            <div class="input-section">
+                <!-- Text input field for task entry (referenced by taskInput) -->
+                <input type="text" id="task-input" placeholder="Enter a new task..." maxlength="100">
+                <!-- Add task button (referenced by addButton) -->
+                <button id="add-button" type="button">Add Task</button>
             </div>
+            
+            <!-- Task list container where tasks will be dynamically added (referenced by taskList) -->
+            <ul id="task-list" class="task-list">
+                <!-- Tasks will be dynamically added here via JavaScript -->
+            </ul>
         </div>
     </div>
 
+    <!-- JavaScript file containing all the dynamic functionality -->
     <script src="script.js"></script>
 </body>
 </html>
